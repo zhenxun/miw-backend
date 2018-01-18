@@ -1,15 +1,7 @@
-# dotenv environment variables file
-.env
-
-### Composer template
-composer.phar
-/vendor/
-
-### Laravel template
 vendor/
-
-# Laravel 5 & Lumen specific
+upload/
 public/upload/
+.env
 .env.*.php
 .env.php
 
