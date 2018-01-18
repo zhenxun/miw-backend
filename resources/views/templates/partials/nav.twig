@@ -1,0 +1,74 @@
+        <nav class="navbar-defaul navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element"> <span>
+                            <a href="{{path_for('home')}}"><img alt="image" class="img-rounded" src="{{ base_url() }}/img/iw-logo.png" /></a>
+                             </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs" style="color: black;"> <strong class="font-bold">Administrator</strong></span></span>
+                        </div>
+                        <div class="logo-element">
+                            IW
+                        </div>
+                    </li>
+
+                    <li {% if active.home == true %} class="active" {% endif %}>
+                        <a href="{{ path_for('home') }}"><img src="{{ base_url() }}/img/icon/home.png" style="width:15px;height:15px;"> <span class="nav-label"> 首頁</span></a>                     
+                    </li>
+
+                    <li {% if active.humanities == true %} class="active" {% endif %}>
+                        <a href="#"><img src="{{ base_url() }}/img/icon/global.png" style="width:15px;height:15px;"> <span class="nav-label">人文</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li {% if active.art == true %} class="active" {% endif %}><a href="{{ path_for('art.index') }}"><img src="{{ base_url() }}/img/icon/art.png" style="width:15px;height:15px;">  當代藝術</i></a></li>
+                            <li {% if active.building == true %} class="active" {% endif %}><a href="{{ path_for('building.index') }}"><img src="{{ base_url() }}/img/icon/building.png" style="width:15px;height:15px;">  建築專欄</i></a></li>
+                            <li {% if active.people == true %} class="active" {% endif %}><a href="{{ path_for('people.index') }}"><img src="{{ base_url() }}/img/icon/people.png" style="width:15px;height:15px;"> 人物專訪</i></a></li>
+                        </ul>                        
+                    </li>
+
+
+                    <li {% if active.space == true %} class="active" {% endif %}>
+                        <a href="#"><img src="{{ base_url() }}/img/icon/box.png" style="width:15px;height:15px;"> <span class="nav-label">空間</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li {% if active.design == true %} class="active" {% endif %}><a href="{{ path_for('design.index') }}"><img src="{{ base_url() }}/img/icon/design.png" style="width:15px;height:15px;">  新設計案</i></a></li>
+                        </ul>                        
+                    </li>
+
+
+                    <li {% if active.furniture == true %} class="active" {% endif %}>
+                        <a href="#"><img src="{{ base_url() }}/img/icon/furniture.png" style="width:15px;height:15px;"> <span class="nav-label">傢飾</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li {% if active.topic == true %} class="active" {% endif %}><a href="{{ path_for('topic.index') }}"><img src="{{ base_url() }}/img/icon/asset.png" style="width:15px;height:15px;">  主體傢飾</i></a></li>
+                            <li {% if active.brand == true %} class="active" {% endif %}><a href="{{ path_for('brand.index') }}"><img src="{{ base_url() }}/img/icon/magazine.png" style="width:15px;height:15px;">  品牌經營</i></a></li>
+                        </ul>                        
+                    </li>
+
+                    <li {% if active.global == true %} class="active" {% endif %}>
+                        <a href="{{ path_for('global.index') }}"><img src="{{ base_url() }}/img/icon/earth.png" style="width:15px;height:15px;"> <span class="nav-label">全球視窗</span></a>                     
+                    </li>
+
+                    <li {% if active.detail == true %} class="active" {% endif %}>
+                        <a href="{{ path_for('detail.index') }}"><img src="{{ base_url() }}/img/icon/puzzle.png" style="width:15px;height:15px;"> <span class="nav-label">DETAIL 年度特刊</span></a>                     
+                    </li>
+
+                    <li {% if active.attachment == true %} class="active" {% endif %}>
+                        <a href="{{ path_for('attachment.index') }}"><img src="{{ base_url() }}/img/icon/folder.png" style="width:15px;height:15px;"> <span class="nav-label">訂閱文件管理</span></a>                     
+                    </li>
+
+                    <li {% if active.contact == true %} class="active" {% endif %}>
+                        <a href="{{ path_for('contact.index') }}"><img src="{{ base_url() }}/img/icon/contact.png" style="width:15px;height:15px;"> <span class="nav-label">聯絡記錄</span></a>                     
+                    </li>
+
+                   <li {% if active.setting == true %} class="active" {% endif %}>
+                        <a href="#"><img src="{{ base_url() }}/img/icon/setting.png" style="width:15px;height:15px;"> <span class="nav-label">系統設定</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li {% if active.setting == true %} class="active" {% endif %}><a href="{{ path_for('setting.index') }}"><img src="{{ base_url() }}/img/icon/key.png" style="width:15px;height:15px;">  變更密碼</i></a></li>
+                             <li {% if active.footer == true %} class="active" {% endif %}><a href="{{ path_for('footer.index') }}"><img src="{{ base_url() }}/img/icon/foot.png" style="width:15px;height:15px;">  頁腳編輯</i></a></li>
+                        </ul>                        
+                    </li>
+
+                    
+                </ul>
+
+            </div>
+        </nav>

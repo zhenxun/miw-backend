@@ -1,0 +1,38 @@
+<div class="modal fade modal-upload" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">{{ title }}</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+              <span class="label label-warning">溫馨提示: 上傳圖片不能小於 450 x 589 像素</span><br><br>
+              <div class="alert alert-danger home-message" role="alert" style="display: none;"></div>
+              <form class="form-horizontal" id="homeForm" action="{{ path_for('home.upload') }}" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="position" class="position" value="0"> 
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-3 control-label">首頁封面 1:</label>
+                  <div class="col-sm-8">
+                    <input type="file" name="file[]" class="form-control" id="1" >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-3 control-label">首頁封面 2:</label>
+                  <div class="col-sm-8">
+                    <input type="file" name="file[]" class="form-control" id="2" >
+                  </div>
+                </div>
+                <input type="submit" class="home-do-upload" style="display:none;">
+              </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+        <button type="button" class="btn btn-primary home-upload">上傳</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

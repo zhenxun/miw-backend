@@ -1,0 +1,37 @@
+<div class="modal fade bs-example-modal-lg" id="modal-content-tag" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="gridSystemModalLabel">{{ title }}</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert tag-content-editor-msg" style="display:none;"></div>
+        <form class="formTagEdit" action="{{ path_for(target_add_tag) }}" method="POST" enctype= multipart/form-data>
+            <input type="hidden" class="content-id" name="content-id">
+            <div style="width:100%;display:flex;justify-content:flex-end;padding-bottom:10px;">
+                <div class="onoffswitch">
+                    <input type="checkbox" name="tag-content-onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" value="1">
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                        <span class="onoffswitch-inner"></span>
+                        <span class="onoffswitch-switch"></span>
+                    </label>
+                </div>  
+            </div>
+          
+            <div class="form-group"><label class="col-sm-1 control-label" style="margin-top:5px;">連結:</label>
+                <div class="col-sm-11"><input type="text" name="content-tag" class="form-control contents_link" placeholder="Ex: https://www.google.com.tw/ "></div>
+            </div>
+
+            <!--<div id="summernote"></div>-->
+            <!--<textarea name="content-tag" class="contents_tag" style="display:none;"></textarea>-->
+
+            <input type="submit" class="submitTagContent" style="display: none;">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default ContentTagClose">關閉</button>
+        <button type="button" class="btn btn-primary btnExecuteSaveContentTag">儲存</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

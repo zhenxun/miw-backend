@@ -1,0 +1,74 @@
+{% extends 'templates/default.twig' %}
+
+{% block content %}
+
+	<div class="row wrapper border-bottom white-bg page-heading" >
+                <div class="col-lg-10">
+                    <h2><img src="{{ base_url() }}/img/icon/design.png" style="width:25px;height:25px;"> 新設計案</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{{ path_for('home')}}">首頁</a>
+                        </li>
+ 						<li>
+                            <a>空間</a>
+                        </li>
+                        <li class="active">
+                            <strong>新設計案</strong>
+                        </li>
+                    </ol>
+                </div>
+    </div>
+
+     <div class="col-lg-12 page-heading-line"></div>
+
+    <form class="form-horizontal" action="" method="POST">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+
+                            <div class="ibox-content">
+
+                                <div class="row">
+                                    <div class="col-md-1 text-right" style="padding:5px 0 0 0;"> <label for="exampleInputName2">儲存格數:</label></div>
+                                    <div class="col-md-2">
+                                            <select class="form-control nums-upload">
+                                                {% for i in 1..12 %}
+                                                    {% if i % 3 == 0 %}
+                                                    <option value="{{i}}" {% if i == grid_num %} selected="selected" {% endif %}>{{i}}</option>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </select>
+                                    </div>
+                                    <div class="col-md-4"><button type="submit" class="btn btn-warning btn-create-thumbnails">建立</button></div>
+                                    <div class="col-md-5 text-right"><button type="button" position="design" class="btn btn-info btn-create-thumbnails btn-files-list"><i class="fa fa-list-ul"></i> &nbsp; 檔案列表</button></div>
+                                </div>
+
+                                 <div class="hr-line-dashed"></div>
+
+                                <div class="row content-upload-grid">
+                                    {% include 'templates/partials/flash.twig' %}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+    </form>
+
+    {% set vars1 = {'title': '新設計案檔案列表'} %}
+    {% include 'templates/partials/modal-list.twig' with  vars1 %}
+    {% set title = {'title':'新設計案上傳'} %}
+    {% include 'templates/partials/modal-upload.twig' with title %}
+    {% set vars2 = {'title':'內容列表'} %}
+    {% include 'templates/partials/modal-content-list.twig' with vars2 %}
+    {% set vars3 = {'title':'內容標籤編輯'} %}
+    {% include 'templates/partials/modal-content-tag.twig' with vars3 %}
+    {% set class = {'class': 'wanted-delete-content'} %}
+    {% include 'templates/partials/modal-delete.twig' with class %}
+    {% include 'templates/partials/modal-cover-delete.twig' %}
+    {% include 'templates/partials/modal-cover-check.twig' %}
+    {% include 'templates/partials/modal-upload-content.twig' %}
+
+{% endblock %}

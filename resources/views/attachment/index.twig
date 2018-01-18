@@ -1,0 +1,75 @@
+{% extends 'templates/default.twig' %}
+
+{% block content %}
+
+	<div class="row wrapper border-bottom white-bg page-heading" >
+                <div class="col-lg-10">
+                    <h2><img src="{{ base_url() }}/img/icon/folder.png" style="width:25px;height:25px;"> 訂閱文件管理</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{{ path_for('home')}}">首頁</a>
+                        </li>
+                        <li class="active">
+                            <strong>訂閱文件管理</strong>
+                        </li>
+                    </ol>
+                </div>
+    </div>
+
+     <div class="col-lg-12 page-heading-line"></div>
+
+    <form class="form-horizontal" id="subscribeForm" action="{{ path_for('attachment.upload') }}" method="POST" enctype="multipart/form-data">
+        <input type="hidden" class="language" name="lang" value="">
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ibox float-e-margins">
+
+                                <div class="ibox-content">
+
+                                    <div class="col-md-12 text-right">
+                                    <button type="button" class="btn btn-info btn-attachment-list"><i class="fa fa-list-ul" aria-hidden="true"></i> 檔案列表</button>
+                                    </div>
+
+                                    <br><br><br>
+
+                                    {% include 'templates/partials/flash.twig' %}
+
+                                    <div class="alert alert-warning alert-dismissable attach-message" style="display:none;">
+                                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                    </div>
+
+
+                                    <div class="panel panel-default">
+                                      <div class="panel-body chn-upload">
+                                        <input type="file" name="chn_file" role="chn" class="chinese_attachement" style="visbility:hidden;width:100%;height:100%;opacity:0;cursor:pointer;">
+                                        <p class="text-center" style="position:relative;margin:-220px 0 50px 0;font-size:25px;"><img class="chnAttachType" src="{{base_url()}}/img/icon/upload.png" style="width:100px;height:100px;"></p>
+                                        <p class="text-center processing-bar-chn" style="position:relative;margin:-50px 0 50px 0;font-size:15px;display:none;"></p>
+                                        <p class="text-center" style="position:relative;margin:-50px 0 50px 0;font-size:25px;">中 文 版 訂 閱 表 格</p>
+                                        <p class="text-center" style="margin-top:-25px;font-size:15px;"><strong> 點擊 "上傳" </strong></p>
+                                      </div>
+                                    </div>
+
+                                    <div class="panel panel-default" >
+                                      <div class="panel-body eng-upload">
+                                        <input type="file" name="eng_file" role="eng" class="english_attachement" style="visbility:hidden;width:100%;height:100%;opacity:0;cursor:pointer;">
+                                        <p class="text-center" style="position:relative;margin:-220px 0 50px 0;font-size:25px;"><img class="engAttachType" src="{{base_url()}}/img/icon/upload.png" style="width:100px;height:100px;"></p>
+                                        <p class="text-center processing-bar-eng" style="position:relative;margin:-50px 0 50px 0;font-size:15px;display:none;"></p>
+                                        <p class="text-center" style="position:relative;margin:-50px 0 50px 0;font-size:25px;">英 文 版 訂 閱 表 格</p>
+                                        <p class="text-center" style="margin-top:-25px;font-size:15px;"><strong> 點擊 "上傳" </strong></p>
+                                      </div>
+                                    </div>                                       
+
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            <input type="submit" class="submitSubscribeForm" style="display:none;">
+        </div>
+    </form>
+
+            {% set vars = {'title': '訂閱文件列表'} %}
+            {% set class = {'class': 'wanted-delete-subscribe'} %}
+            {% include 'templates/partials/modal-list.twig' with  vars %}
+            {% include 'templates/partials/modal-delete.twig' with class %}
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'templates/default.twig' %}
+
+{% block content %}
+
+	<div class="row wrapper border-bottom white-bg page-heading" >
+                <div class="col-lg-10">
+                    <h2><img src="{{ base_url() }}/img/icon/key.png" style="width:25px;height:25px;">  密碼變更</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{{ path_for('home')}}">首頁</a>
+                        </li>
+ 						<li>
+                            <a>系統設定</a>
+                        </li>                        
+                        <li class="active">
+                            <strong>密碼變更</strong>
+                        </li>
+                    </ol>
+                </div>
+    </div>
+
+     <div class="col-lg-12 page-heading-line"></div>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+
+                            <div class="ibox-content">
+                                {% include 'templates/partials/flash.twig' %}
+                                <div class="panel panel-default">
+                                <div class="panel-body" style="margin:20px 20px 0 20px;">
+                                    <h2><img src="{{ base_url() }}//img/icon/forgot-password.png" style="width:25px;height:25px;"> &nbsp; 修改密碼</h2>
+                                    <br>
+                                    <form id="changePasswordForm" action="{{ path_for('changePassword') }}" method="POST">
+                                      <div class="alert alert-danger error" style="display:none;"></div>
+                                      <div class="form-group">
+                                        <label for="new-password">帳號: </label>
+                                            admin
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label for="new-password">新密碼: </label>
+                                        <input type="password" name="newpwd" class="form-control" id="new-password" placeholder="新密碼">
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label for="confirm-password">確認新密碼: </label>
+                                        <input type="password" name="confirmpwd" class="form-control" id="confirm-password" placeholder="確認新密碼" >
+                                      </div>
+
+                                      <input type="submit" class="btn btn-info" value="確定更改">
+
+                                    </form>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="panel panel-default">
+                                <div class="panel-body" style="margin:20px 20px 0 20px;">
+                                    <h2><img src="{{ base_url() }}//img/icon/multi-setting.png" style="width:25px;height:25px;"> &nbsp; 設定</h2>
+                                    <br>
+                                    <form id="resetEmailForm" action="{{ path_for('resetEmail') }}" method="POST">
+                                      <div class="alert alert-danger error" style="display:none;"></div>
+                                      <div class="form-group">
+                                        <label for="confirm-password">電子郵件: </label>
+                                        <p class="text-info">* 設定您的電子郵件，用於密碼重置</p>
+                                        <input type="email" name="resetEmail" class="form-control" id="reset-email" placeholder="電子郵件" >
+                                      </div>
+
+                                      <input type="submit" class="btn btn-info" value="儲存">
+                                    </form>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+{% endblock %}

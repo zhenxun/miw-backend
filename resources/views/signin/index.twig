@@ -1,0 +1,30 @@
+{% extends 'templates/default-signin.twig' %}
+
+{% block content %}
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name">IW</h1>
+
+            </div>
+            <h3>歡迎來到 IW 傢飾</h3>
+            <p>登入～ 管理您的網站</p>
+            {% include 'templates/partials/flash.twig' %}
+            <form class="m-t" id="signInForm" role="form" action="{{ path_for('signin') }}" method="POST">
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control" placeholder="Username" required="required">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required="required">
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">我要登入</button>
+
+                <a href="{{ path_for('forgot.index') }}"><small>忘記密碼?</small></a>
+            </form>
+            <p class="m-t"> <small>IW 傢飾 &copy; 2017</small> </p>
+        </div>
+    </div>
+
+{% endblock %}

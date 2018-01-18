@@ -1,0 +1,15 @@
+{% if flash.getMessage('error') %}
+    <div class="alert alert-danger">
+    	<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+        <i class="fa fa-times" aria-hidden="true"></i> {{ flash.getMessage('error') | first }}
+    </div>
+{% endif %}
+
+
+{% if flash.getMessage('success') %}
+    <div class="alert alert-success">
+    	<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+        <i class="fa fa-check" aria-hidden="true"></i> {{ flash.getMessage('success') | first }}
+    </div>
+{% endif %}
+

@@ -1,0 +1,53 @@
+{% extends 'templates/default.twig' %}
+
+{% block content %}
+	         
+            <div class="row  border-bottom white-bg dashboard-header">
+                    <div class="row">
+                      <div class="col-md-12 text-right">
+                        <button type="button" class="btn btn-warning btn-home-upload"><i class="fa fa-upload" aria-hidden="true"></i> 上傳檔案</button>
+                        <button type="button" class="btn btn-info btn-home-list"><i class="fa fa-list-ul" aria-hidden="true"></i> 檔案列表</button>
+                      </div>
+
+                      <br><br><br>
+
+                      {{ upload_path.dir }}
+
+                      {% include 'templates/partials/flash.twig' %}
+
+                      {% if cover1 is empty %}
+                        {% set folder = 'defaults' %}
+                        {% set cover1 = '1-1.png' %}
+                      {% else %}
+                        {% set folder = 'covers' %}
+                        {% set cover1 = cover1.filename %}
+                      {% endif %}
+
+                      {% if cover1 is empty %}
+                        {% set folder = 'defaults' %}
+                        {% set cover2 = '2-1.png' %}
+                      {% else %}
+                        {% set folder = 'covers' %}
+                        {% set cover2 = cover2.filename %}
+                      {% endif %}
+
+                      <div class="col-md-6 text-right">
+                        <img src="{{ base_url() }}/upload/{{ folder }}/{{ cover1 }}" class="img-thumbnail thumb_click" width="600" height="600" style="cursor:pointer;">
+                      </div>
+                      <div class="col-md-6 text-left" >
+                        <img src="{{ base_url() }}/upload/{{ folder }}/{{ cover2 }}" class="img-thumbnail thumb_click" width="600" height="600" style="cursor:pointer;">
+                      </div>
+                    </div>
+
+            </div>	
+
+            {% set vars = {'title': '首頁檔案上傳'} %}
+            {% include 'templates/partials/modal-home.twig' with  vars %}
+            {% set vars1 = {'title': '首頁文件列表'} %}
+            {% include 'templates/partials/modal-list.twig' with  vars1 %}
+            {% set class = {'class': 'wanted-delete-index'} %}
+            {% include 'templates/partials/modal-delete.twig' with class %}
+			{% include 'templates/partials/modal-message.twig' %}
+
+
+{% endblock %}

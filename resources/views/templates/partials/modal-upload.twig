@@ -1,0 +1,50 @@
+<div class="modal fade modal-upload" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">{{ title }}</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+              <span class="label label-warning">溫馨提示: 封面圖片必須是360 x 240; 內容圖片不能小於 587 x 765 像素</span><br><br>
+              <form class="form-controller" id="gridUploadForm" action="{{ path_for(target_post_route) }}" method="POST" enctype="multipart/form-data">
+                  <div class="alert alert-danger alert-dismissable error" style="display: none;">
+                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                  </div>
+                  <div class="form-group">
+                    <input type="hidden" name="rank">
+                    <input type="hidden" name="position">
+                    <label id="coverFile" for="coverFile"></label>
+                    <input type="file" name="coverFile" id="coverFile">
+                  </div> 
+                  <hr>
+                  <div class="form-group">
+                    <input type="hidden" name="rank">
+                    <input type="hidden" name="position">
+                    <label for="contentFile">內容上傳:</label><br>
+                    <div class="text-right" style="padding-bottom:5px;"><button class="btn btn-xs btn-info btn-file-add" type="button"><i class="fa fa-plus" aria-hidden="true"></i> 新增附加檔案</button></div>
+                    <table class="table containerFile">
+                      <tr>
+                        <td>1.</td>
+                        <td width="100"><input type="file" name="contentFile[]" role="1" id="contentFile"></td>
+                        <td>
+                          <input type="radio" checked="checked" value="1" name="type1"> 雜誌內頁 &nbsp;&nbsp;
+                          <input type="radio" value="2" name="type1"> 廣告
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <input type="submit" class="gridCoverContentFileUpload" style="display: none;">                  
+              </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btnExecuteFileUploadClose" data-dismiss="modal">關閉</button>
+        <button type="button" class="btn btn-primary btnExecuteFileUpload">上傳</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

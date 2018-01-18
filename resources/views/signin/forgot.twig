@@ -1,0 +1,46 @@
+{% extends 'templates/default-signin.twig' %}
+
+{% block content %}
+
+    <div class="passwordBox animated fadeInDown">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="ibox-content">
+
+                    <h2 class="font-bold">忘記密碼 Forgot password</h2>
+
+                    <p>輸入您的電子郵件重置您的密碼</p>
+
+                    <p>Enter your email address and your password will be reset and emailed to you.</p>
+
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            {% include 'templates/partials/flash.twig' %}
+                            <form class="m-t" id="forgotPasswordForm" role="form" action="{{ path_for('forgot.reset') }}" method="POST">
+                                <div class="form-group">
+                                    <input type="email" name="sendEmail" class="form-control" placeholder="電子郵件 Email address">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary block full-width m-b">傳送新密碼 Send new password</button>
+                                <p class="text-center"><a href="{{ path_for('signin.index') }}"><small>立即登入</small></a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-6">
+                Copyright IW 傢飾 Company
+            </div>
+            <div class="col-md-6 text-right">
+               <small>© 2017</small>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

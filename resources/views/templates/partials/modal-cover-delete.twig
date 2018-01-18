@@ -1,0 +1,26 @@
+
+<div class="modal fade" id="modal-cover-del" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">功能視窗</h4>
+      </div>
+      <div class="modal-body">
+      	<input type="hidden" id="save-id" value="">
+        <div class="row">
+          <div class="col-md-2"><img src="{{ base_url() }}/img/icon/danger.png" style="width:50px;height:50px;"></div>
+          <div class="col-md-7" style="font-size:25px;padding-top:10px;"><strong>是否確定刪除此筆資料?</strong></div>
+        </div>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-7" style="font-size:10px;padding-top:10px;color:red;letter-spacing:2px;"><strong>注意: 系統將移除此封面下所有檔案內容!</strong></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">離開</button>
+        <button type="button" class="btn btn-warning wanted-cover-delete">我要刪除</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

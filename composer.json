@@ -1,0 +1,28 @@
+{
+    "name": "playsure/iw",
+    "authors": [
+        {
+            "name": "Daniel Wong",
+            "email": "wzx@playsure.tw"
+        }
+    ],
+    "require": {
+    	"slim/slim": "^3.0",
+        "slim/twig-view": "^2.2",
+        "php-di/slim-bridge": "^1.0",
+        "illuminate/database": "^5.5",
+        "respect/validation": "^1.1",
+        "slim/csrf": "^0.8.1",
+        "symfony/var-dumper": "^3.3",
+        "slim/flash": "^0.2.0",
+        "phpmailer/phpmailer": "^6.0",
+        "vlucas/phpdotenv": "^2.4"
+    },
+
+    "autoload":{
+
+        "psr-4":{
+            "Iw\\":"app"
+        }
+    }
+}
